@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: white;
+  color: #fff;
+  
+}
+.top-navigation {
+  background-color: white;
+  padding: 20px 0;
+  display: flex;
+  justify-content: right;
+}
+.top-nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.top-nav-menu li {
+  margin-right: 10px;
+}
+.top-nav-menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header-top {
+  padding: 10px 0;
+}
+.mainlogo{
+  width: 50px;
+  height: auto;
+  margin-left:-200px;
+  margin-bottom: -10px;
+  margin-top: -170px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  padding: 5px;
+  outline: none;
+  
+}
+
+.input-group button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  outline: none;
+}
+.icon-user{
+  display: flex;
+  justify-content: right;
+  
+}
+.icon-user img{
+  width: 30px;
+  height: 30px;
+  margin-top: -70px;
+}
+
+
+.container-nav{
+  display: flex;
+}
+.navbar {
+  background-color: rgb(113, 113, 236);
+  margin-top: -20px;
+  justify-content: right;
+  height: 60px;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+
+  
+}
+.fish {
+  width: 20%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  
+}
+.connect-wrapper{
+  display: flex;
+  justify-content: left;
+  
+}
+.connect{
+  width: 20%;
+  display: flex;
+  margin-left: 20px ;
+
+
+}
+.nav-items {
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.nav-item-header {
+  
+  width: 100px;
+  padding: 10px;
+  border: none;
+  text-align: bottom;
+  cursor: pointer;
+}
+
+.nav-item-content {
+  display: none;
+  background-color:  rgb(113, 113, 236);;
+  padding:15px;
+}
+
+.nav-item-content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item-content li {
+  margin-bottom: 0px;
+  width: 80px;
+
+}
+.nav li.active .nav-content{
+  display: block;
+}
+.nav-item {
+  margin-right: 100px;
+  
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #aaa;
+}
+
+
+.ad-container {
+  position: fixed;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.ad-container img {
+  width: 300px; 
+  height: auto; 
+}

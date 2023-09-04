@@ -1,0 +1,17 @@
+#point{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#point img{
+    width: 50px;
+}
+#pointTitle{
+    color: red;
+    font-size: xx-large;
+}
+.pointFont{
+    display: flex;
+    text-align: left;
+    justify-content: left;
+}

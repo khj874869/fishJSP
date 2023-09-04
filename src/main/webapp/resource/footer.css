@@ -1,0 +1,33 @@
+.bottomarea {
+    background-color: black;
+    padding: 30px 0;
+    font-size: small;
+    height: 300px;
+  }
+  
+  
+  .bottomarea .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .bottomarea-inner {
+    display: flex;
+    justify-content: right;
+    color:white;
+  }
+  
+  .bottomarea-column {
+    width: 33.33%;
+  }
+  
+  .bottomarea-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .bottomarea-column p {
+    margin-bottom: 10px;
+  }
+  
+  

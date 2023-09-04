@@ -1,0 +1,98 @@
+.imgSection{
+    display: flex;
+    justify-content: left ;
+    padding-left: 80px;
+    
+}
+ol  a{
+    text-decoration: none;
+    color: black;
+
+}
+ol{
+    list-style-type: none;
+}
+
+.cartitem img{
+    width: 400px;
+}
+
+.imagination{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    padding-left: 20px;
+}
+.imagination h2{
+    width: 200px;
+    height: 50px;
+}
+
+.collection {
+    width: 300px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.numbers{
+    width: 40px;
+}
+
+.comment {
+    margin-bottom: 10px;
+  }
+  #productBtn2{
+    width:50%;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  #productBtn{
+    width: 50%;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+  }
+#comment-section{
+    display: flex;
+    justify-content: center;
+}
+#comment-input{
+    width:400px;
+
+}
+#comment-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+
+}
+
+#comment-container {
+    margin-top: 10px;
+}
+
+#comment-input {
+    margin-top: 10px;
+    width: 100%;
+
+}
+.productexplain{
+    border: 1px solid black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form img{
+    width :20%;
+    margin-top: -20%;
+}

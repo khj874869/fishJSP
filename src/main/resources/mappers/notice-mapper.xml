@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="NoticeMapper">
+	<resultMap type="Notice" id="NoticeResultMap" >
+		<id property="noticeNo" column="NOTICE_NO" />
+  		<result property="noticeSubject" column="NOTICE_SUBJECT"/>
+  		<result property="noticeContent" column="NOTICE_CONTENT"/>
+  		<result property="noticeWriter" column="NOTICE_WRITER"/>
+  		<result property="nCreateDate" column=" N_CREATE_DATE"/>
+  		<result property="nUpdateDate" column="N_UPDATE_DATE"/>
+  		<result property="noticeFilename" column="NOTICE_FILENAME"/>
+  		<result property="fileRename" column="NOTICE_FILERENAME"/>
+  		<result property="noticeFilepath" column="NOTICE_FILEPATH"/>
+  		<result property="noticeFilelength" column="NOTICE_FILELENGTH"/>
+		</resultMap>
+<insert id="insertNotice">
+INSERT INTO NOTICE VALUES(SEQ_NOTICE.NEXTVAL,#{noticeSubject},#{noticeContent},#{noticeWriter},DEFAULT,DEFAULT,#{noticeFilename},#{fileRename},#{noticeFilepath},#{noticeFilelength})
+</insert>
+<select id="selectList" resultMap="NoticeResultMap">
+SELECT * FROM NOTICE 
+</select>
+<select id="selectAllDataKeyword" resultMap="NoticeResultMap">
+	SELECT * FROM NOTICE  
+	<if test="searchCondition == 'all'">	
+	WHERE NOTICE_CONTENT LIKE '%'||#{searchKeyword}||'%' OR  NOTICE_WRITER LIKE '%'|| #{searchKeyword}||'%' OR  NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	</if>
+	<if test="searchCondition=='content'">
+	WHERE NOTICE_CONTENT LIKE '%'||#{searchKeyword}||'%' 
+	</if>
+	<if test="searchCondition=='writer'">
+	WHERE NOTICE_WRITER LIKE '%'|| #{searchKeyword}||'%' 
+	</if>
+	<if test="searchCondition=='title'">
+	WHERE NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	</if>
+</select>
+<select id="selectAllData" resultMap="NoticeResultMap">
+	SELECT * FROM NOTICE  WHERE NOTICE_CONTENT LIKE '%'||#{searchKeyword}||'%' OR  NOTICE_WRITER LIKE '%'|| #{searchKeyword}||'%' OR  NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+</select>
+<select id="selectConditionSubject" resultMap="NoticeResultMap">
+		SELECT * FROM NOTICE  WHERE NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+</select>
+<select id="selectNoticeContent" resultMap="NoticeResultMap">
+		SELECT * FROM NOTICE  WHERE NOTICE_CONTENT LIKE '%'||#{searchKeyword}||'%'
+</select>
+<select id="selectWriterByKeyword" resultMap="NoticeResultMap">
+	SELECT * FROM NOTICE  WHERE NOTICE_WRITER LIKE '%'|| #{searchKeyword}||'%'
+</select>
+
+
+<select id="selectListCount" resultType="_int">
+	SELECT COUNT(*) FROM NOTICE 
+	<if test="searchCondition == 'all'">	
+	WHERE NOTICE_CONTENT LIKE '%'||#{searchKeyword}||'%' OR  NOTICE_WRITER LIKE '%'|| #{searchKeyword}||'%' OR  NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	</if>
+	<if test="searchCondition=='content'">
+	WHERE NOTICE_CONTENT LIKE '%'||#{searchKeyword}||'%' 
+	</if>
+	<if test="searchCondition=='writer'">
+	WHERE NOTICE_WRITER LIKE '%'|| #{searchKeyword}||'%' 
+	</if>
+	<if test="searchCondition=='title'">
+	WHERE NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	</if>
+</select>
+<update id="modifyNotice">
+UPDATE NOTICE SET NOTICE_CONTENT = #{noticeContent} ,NOTICE_FILERENAME=#{fileRename},NOTICE_SUBJECT=#{noticeSubject} WHERE NOTICE_NO = #{noticeNo}
+</update>
+<delete id="deleteNotice">
+DELETE FROM NOTICE WHERE NOTICE_NO=#{noticeNo}
+</delete>
+<select id="selectOnenotice" resultMap="NoticeResultMap">
+SELECT * FROM NOTICE WHERE NOTICE_NO = #{noticeNo}
+</select>
+</mapper>

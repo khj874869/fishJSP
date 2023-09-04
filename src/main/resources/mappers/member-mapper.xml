@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="MemberMapper">
+<resultMap id="memberResultMap" type="kr.co.fishmarket.member.domain.Member" >
+
+<id property="memberId" column="USER_ID" />
+<result property="memberPw" column="USER_PASSWORD" />
+<result property="memberName" column="USER_NAME" />
+<result property="memberAge"  column="AGE" />
+<result property="memberEmail" column="USER_EMAIL" />
+<result property="memberPhone" column="PHONE" />
+<result property="memberAddress" column="USER_ADDR" />
+<result property="memberDate" column="ENROLL_DATE" />
+<result property="updateDate" column="UPDATE_DATE" />
+</resultMap>
+<insert id="insertMember">INSERT INTO FISHWEB VALUES(#{memberId },#{memberEmail},#{memberPw},#{memberName},#{memberAddress},#{memberPhone},#{memberAge},DEFAULT,DEFAULT) </insert>
+
+<delete id="deleteMember">DELETE FROM FISHWEB WHERE USER_ID = #{memberId } </delete>
+
+<update id="updateMember">UPDATE FISHWEB SET USER_PASSWORD =#{memberPw},USER_EMAIL=#{memberEmail},PHONE=#{memberPhone},USER_ADDR=#{memberAddress} WHERE USER_ID = #{memberId} </update>
+
+<select id="selectCheckLogin" resultMap="memberResultMap">SELECT * FROM FISHWEB WHERE USER_ID = #{memberId} AND USER_PASSWORD=#{memberPw} </select>
+
+<select id="selectOneById" resultMap="memberResultMap">SELECT * FROM FISHWEB WHERE USER_ID = #{memberId} </select>
+
+</mapper>
